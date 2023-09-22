@@ -57,6 +57,7 @@ def pin_functions():
 def blinK_sketch_with_abstract_functions():
     # pin = Pin(2, Pin.OUT)
     # we can still using the pin.value(1 or 0) in the program to set the value of the pin
+    # if the pin is suppose to be in input, Pin(2, Pin.IN) and one can further set the pin in either pull up or pull down Pin(2, Pin.IN, Pin.PULL_UP)
     pin = Pin(2, Pin.OUT, value=1) # on creating the pin, it is possible to set the value of the pin. e.g. the value here has been set to 1 that is equivalent to high
     pin.on()
     sleep_ms(2000)
@@ -68,14 +69,6 @@ while True:
     # connect_to_wifi_STA_MODE() # This was the connect in STA MOD
     # actAsAccessPoint() # this is the function that show how to make the esp32 an access point other devices can connect to
     # blink_with_ms(500) # this test was a test for blink the led in ms
-    blinK_sketch_with_abstract_functions() # this is the sketch that test the pin abstract function of the machine library.and
+    # blinK_sketch_with_abstract_functions() # this is the sketch that test the pin abstract function of the machine library.and
 
-        
 
-# import time
-# import machine
-# pin = machine.Pin(2, machine.Pin.OUT)
-# while True:
-#     pin.value(1)
-#     time.sleep(2)
-#     pin.value(0)    
