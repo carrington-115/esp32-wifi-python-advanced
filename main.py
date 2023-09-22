@@ -1,7 +1,7 @@
 # # main.py -- put your code here!
 import network # this is the network library
 from machine import Pin
-from time import sleep
+from time import sleep, sleep_ms, sleep_us  # the functions are the normal sleep functions for milliseconds, microseconds
 
 led = Pin(2, Pin.OUT)
 def connect_to_wifi_STA_MODE():
@@ -37,13 +37,23 @@ def actAsAccessPoint():
         sleep(1)
         connectedDevice = wlan.ifconfig()
         print(f"The location of the connected device is {connectedDevice}")
+        blink_led()
+
+
+def blink_with_ms(t):
+    led = Pin(2, Pin.OUT)
+    led.value(1)
+    sleep_ms(t) # you can do the same for microseconds by using sleep_us()
+    led.value(0)
+
 
 
 # this is the section to run the program
 while True:
-    print("The ESP32 is now an access point for WIFI connection\n")
+    print("The code has started running this proof you are in the main program of the code\n")
     # connect_to_wifi_STA_MODE() # This was the connect in STA MOD
-    actAsAccessPoint()
+    # actAsAccessPoint() # this is the function that show how to make the esp32 an access point other devices can connect to
+    blink_with_ms(500)
      
         
 
